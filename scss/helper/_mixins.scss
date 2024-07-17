@@ -1,0 +1,9 @@
+@mixin center {
+	text-align: center;
+	vertical-align: center;
+}
+
+@mixin dimensions($width: 10px, $height: 10px) {
+	width: $width;
+	height: $height;
+}
