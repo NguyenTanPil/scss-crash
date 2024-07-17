@@ -5,15 +5,11 @@
 
 h1 {
 	font-family: Roboto, sans-serif;
-	@include center;
+	@extend %center;
 }
 
 .absolute {
 	position: absolute;
-}
-
-%relative {
-	position: relative;
 }
 
 .banner {
@@ -35,7 +31,7 @@ h1 {
 		@extend .absolute;
 
 		span {
-			@include center;
+			@extend %center;
 			@extend %relative;
 			width: 40%;
 			left: 30%;
