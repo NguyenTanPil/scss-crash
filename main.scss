@@ -8,6 +8,14 @@ h1 {
 	@include center;
 }
 
+.absolute {
+	position: absolute;
+}
+
+%relative {
+	position: relative;
+}
+
 .banner {
 	font-family: 'Pacifico', cursive;
 	height: 400px;
@@ -24,9 +32,11 @@ h1 {
 		left: 25%;
 		line-height: 200px;
 		@include dimensions(50%, 200px);
+		@extend .absolute;
 
 		span {
 			@include center;
+			@extend %relative;
 			width: 40%;
 			left: 30%;
 		}
