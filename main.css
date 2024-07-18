@@ -3,7 +3,7 @@
   position: relative;
 }
 
-.banner .slogan span, h1 {
+h1, .banner .slogan span {
   text-align: center;
   vertical-align: center;
 }

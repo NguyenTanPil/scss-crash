@@ -1,7 +1,7 @@
+@use './scss/helper/placeholders' as *;
+@use './scss/helper/variables';
+@use './scss/helper/mixins';
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
-@import './scss/helper/variables';
-@import './scss/helper/mixins';
-@import './scss/helper/placeholders';
 
 h1 {
 	font-family: Roboto, sans-serif;
@@ -15,19 +15,19 @@ h1 {
 .banner {
 	font-family: 'Pacifico', cursive;
 	height: 400px;
-	background-image: url($lemonade-banner);
+	background-image: url(variables.$lemonade-banner);
 	border: {
-		top: $border;
-		bottom: $border;
+		top: variables.$border;
+		bottom: variables.$border;
 	}
 
 	.slogan {
-		background-color: $translucent-white;
+		background-color: variables.$translucent-white;
 		border: 4px solid black;
 		top: 200px;
 		left: 25%;
 		line-height: 200px;
-		@include dimensions(50%, 200px);
+		@include mixins.dimensions(50%, 200px);
 		@extend .absolute;
 
 		span {
@@ -45,7 +45,7 @@ h1 {
 	.icon {
 		display: inline-block;
 		margin: 2%;
-		border: $border;
-		@include dimensions(300px, 300px);
+		border: variables.$border;
+		@include mixins.dimensions(300px, 300px);
 	}
 }
