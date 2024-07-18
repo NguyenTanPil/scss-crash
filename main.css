@@ -18,8 +18,13 @@ h1 {
   color: green;
 }
 
+.micro {
+  width: 200px;
+}
+
 .absolute, .banner .slogan {
   position: absolute;
+  height: 40px;
 }
 
 .hover-class {
