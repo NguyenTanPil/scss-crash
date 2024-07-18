@@ -1,11 +1,16 @@
 @use './scss/helper/placeholders' as *;
 @use './scss/helper/variables';
 @use './scss/helper/mixins';
+@use './scss/helper/library';
+
+library.$color: green;
+
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
 
 h1 {
-	font-family: Roboto, sans-serif;
 	@extend %center;
+	font-family: Roboto, sans-serif;
+	color: library.$color;
 }
 
 .absolute {

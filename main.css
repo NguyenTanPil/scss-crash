@@ -8,8 +8,14 @@ h1, .banner .slogan span {
   vertical-align: center;
 }
 
+code {
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
 h1 {
   font-family: Roboto, sans-serif;
+  color: green;
 }
 
 .absolute, .banner .slogan {
