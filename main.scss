@@ -23,6 +23,10 @@ h1 {
 	height: functions.getDoubleRowHeight(20px);
 }
 
+.avt-user {
+	@include mixins.avatar(50px, true);
+}
+
 .hover-class {
 	color: white;
 

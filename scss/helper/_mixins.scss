@@ -19,3 +19,14 @@
 		@content;
 	}
 }
+
+@mixin avatar($size, $circle: false) {
+	width: $size;
+	height: $size;
+
+	@if $circle {
+		border-radius: $size / 2;
+	} @else {
+		border-radius: 50%;
+	}
+}
