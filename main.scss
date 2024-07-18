@@ -17,6 +17,18 @@ h1 {
 	position: absolute;
 }
 
+.hover-class {
+	color: white;
+
+	@include mixins.hover {
+		color: blue;
+
+		span {
+			outline: none;
+		}
+	}
+}
+
 .banner {
 	font-family: 'Pacifico', cursive;
 	height: 400px;

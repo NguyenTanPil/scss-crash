@@ -22,6 +22,16 @@ h1 {
   position: absolute;
 }
 
+.hover-class {
+  color: white;
+}
+.hover-class:hover {
+  color: blue;
+}
+.hover-class:hover span {
+  outline: none;
+}
+
 .banner {
   font-family: "Pacifico", cursive;
   height: 400px;
