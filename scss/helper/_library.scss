@@ -7,3 +7,39 @@ code {
 	border-radius: $border-radius;
 	box-shadow: $box-shadow;
 }
+
+// list
+$sizes: 40px, 50px, 80px;
+@each $size in $sizes {
+	.icon-#{$size} {
+		font-size: $size;
+		height: $size;
+		width: $size;
+	}
+}
+
+// map
+$icons: (
+	'eye': '\f112',
+	'start': '\f12e',
+	'stop': '\f12f',
+);
+
+@each $name, $icon in $icons {
+	.icon-#{$name}:before {
+		display: inline-block;
+		font-size: 12px;
+		content: $icon;
+	}
+}
+
+// Destructuring
+$icons-new: 'eye' '\f112'12px, 'start' '\f12e'16px, 'stop' '\f12f'10px;
+
+@each $name, $icon, $size in $icons-new {
+	.icon-new-#{$name}:before {
+		display: inline;
+		content: $icon;
+		font-size: $size;
+	}
+}

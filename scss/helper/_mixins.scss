@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @mixin center {
 	text-align: center;
 	vertical-align: center;
@@ -25,7 +27,7 @@
 	height: $size;
 
 	@if $circle {
-		border-radius: $size / 2;
+		border-radius: math.div($size, 2);
 	} @else {
 		border-radius: 50%;
 	}

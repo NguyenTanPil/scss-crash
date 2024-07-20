@@ -13,6 +13,60 @@ code {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
+.icon-40px {
+  font-size: 40px;
+  height: 40px;
+  width: 40px;
+}
+
+.icon-50px {
+  font-size: 50px;
+  height: 50px;
+  width: 50px;
+}
+
+.icon-80px {
+  font-size: 80px;
+  height: 80px;
+  width: 80px;
+}
+
+.icon-eye:before {
+  display: inline-block;
+  font-size: 12px;
+  content: "\f112";
+}
+
+.icon-start:before {
+  display: inline-block;
+  font-size: 12px;
+  content: "\f12e";
+}
+
+.icon-stop:before {
+  display: inline-block;
+  font-size: 12px;
+  content: "\f12f";
+}
+
+.icon-new-eye:before {
+  display: inline;
+  content: "\f112";
+  font-size: 12px;
+}
+
+.icon-new-start:before {
+  display: inline;
+  content: "\f12e";
+  font-size: 16px;
+}
+
+.icon-new-stop:before {
+  display: inline;
+  content: "\f12f";
+  font-size: 10px;
+}
+
 h1 {
   font-family: Roboto, sans-serif;
   color: green;
