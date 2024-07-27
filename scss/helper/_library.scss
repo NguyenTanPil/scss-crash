@@ -2,6 +2,7 @@ $black: #000 !default;
 $border-radius: 0.25rem !default;
 $box-shadow: 0 0.5rem 1rem rgba($black, 0.15) !default;
 $color: red;
+$base-color: #036;
 
 code {
 	border-radius: $border-radius;
@@ -41,5 +42,12 @@ $icons-new: 'eye' '\f112'12px, 'start' '\f12e'16px, 'stop' '\f12f'10px;
 		display: inline;
 		content: $icon;
 		font-size: $size;
+	}
+}
+
+// for rule
+@for $i from 1 through 3 {
+	ul:nth-child(3n + #{$i}) {
+		background-color: lighten($base-color, $i * 5%);
 	}
 }
