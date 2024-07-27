@@ -1,0 +1,101 @@
+@use 'sass:math';
+@use 'sass:string';
+@use 'sass:list';
+@use 'sass:map';
+
+// number value
+$transition-speed: math.div(1s, 50px);
+
+@mixin move($left-start, $left-stop) {
+	position: absolute;
+	left: $left-start;
+	transition: left ($left-stop - $left-start) * $transition-speed;
+
+	&:hover {
+		left: $left-stop;
+	}
+}
+
+.slider {
+	@include move(10px, 120px);
+}
+
+// string value
+$unquote-value: string.unquote('.widget:hover'); // .widget:hover
+$quote-value: string.quote(bold); // 'bold'
+$index-value: string.index('This is an index value', 'This'); // 1
+$slice-value: string.slice('This is an slice value', -5); // value
+
+// list value
+$nth-value: list.nth(10px 12px 16px, 2); // 12px
+$sizes: 40px, 50px, 80px;
+$append-value: list.append(10px 12px 16px, 25px); // 10px 12px 16px 25px
+$index-value-list: list.index(10px 12px 16px, 12px); // 2
+
+// map value
+$font-weights: (
+	'regular': 400,
+	'medium': 500,
+	'bold': 700,
+);
+$icons: (
+	'eye': '\f112',
+	'start': '\f12e',
+	'stop': '\f12f',
+);
+$light-weights: (
+	'lightest': 100,
+	'light': 300,
+);
+$heavy-weights: (
+	'medium': 500,
+	'bold': 700,
+);
+$weights: (
+	'light': 300,
+	'medium': 500,
+);
+
+$get-value-from-map: map.get($font-weights, 'medium'); // 500
+$null-value-from-map: map.get($font-weights, 'extra-bold'); // null
+@each $name, $glyph in $icons {
+	.icon-#{$name}:after {
+		display: inline-block;
+		font-family: 'Courier New', Courier, monospace;
+		content: $glyph;
+	}
+}
+
+$added-item-to-map: map.set(
+	$font-weights,
+	'extra-bold',
+	900
+); // ("regular": 400, "medium": 500, "bold": 700, "extra-bold": 900)
+$added-item-to-map: map.set($font-weights, 'bold', 100); // ("regular": 400, "medium": 500, "bold": 900)
+$merge-value-in-map: map.merge(
+	$light-weights,
+	$heavy-weights
+); // ("lightest": 100, "light": 300, "medium": 500, "bold": 700)
+$merge-value-without-map-variable: map.merge(
+	$weights,
+	(
+		'medium': 700,
+	)
+); // ("light": 300, "medium": 700)
+
+// true and false values
+$false-value-1: 1px == 2px; // false
+$true-value-1: 1px == 1px; // true
+$false-value-2: 1px < 2px; // false
+$not-boolean-value: not true; // false
+$and-operator-value: true and false; // false
+$or-operator-value: true or false; // true
+
+// null value
+$null-value-1: string.index('Helvetica Neue', 'Roboto'); //null
+$null-value-1: map.get(
+	(
+		'large': 20px,
+	),
+	'small'
+); // null
